@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Restoran Goran — Bibinje | Bar &amp; Grill s gradela</title>
+<meta name="description" content="Restoran Goran u Bibinjama — Bar & Grill uz more. Miješano meso s gradela, ražnjići, svježa riba i lignje na žaru, obilne porcije i domaća atmosfera. Rezervirajte stol." />
+<link rel="canonical" href="https://artme-nx.github.io/restoran-goran-bibinje-v1/" />
+<meta property="og:type" content="restaurant" />
+<meta property="og:locale" content="hr_HR" />
+<meta property="og:site_name" content="Restoran Goran · Bibinje" />
+<meta property="og:title" content="Restoran Goran — Bibinje | Bar & Grill" />
+<meta property="og:description" content="Sve s gradela, uz more. Bar & Grill u Bibinjama kraj Zadra." />
+<meta property="og:url" content="https://artme-nx.github.io/restoran-goran-bibinje-v1/" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Restoran Goran","servesCuisine":["Barbecue","Grill","Mediterranean","Seafood"],"priceRange":"$$","telephone":"+385 98 969 1593","address":{"@type":"PostalAddress","addressLocality":"Bibinje","addressCountry":"HR"},"url":"https://artme-nx.github.io/restoran-goran-bibinje-v1/","acceptsReservations":"True"}
+</script>
+<style>
+:root{
+  --bg:#181513;          /* ugljen */
+  --bg-2:#211c19;
+  --paper:#F0E7DA;       /* topla krema */
+  --ember:#D4691E;       /* žar / plamen */
+  --ember-2:#b9591a;
+  --olive:#7A7A4E;
+  --ink:#23201c;
+  --ink-soft:#5e564c;
+  --line:rgba(35,32,28,.14);
+  --line-d:rgba(240,231,218,.16);
+  --fd:'Bitter',Georgia,serif;
+  --fb:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--fb);background:var(--paper);color:var(--ink);font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;}a{color:inherit;text-decoration:none;}
+::selection{background:var(--ember);color:#1a1006;}
+.wrap{width:min(1220px,90vw);margin:0 auto;}
+h1,h2,h3{font-family:var(--fd);font-weight:600;line-height:1.08;letter-spacing:-.01em;}
+.it{font-style:italic;font-weight:400;}
+.eyebrow{font-family:var(--fb);text-transform:uppercase;font-size:11px;letter-spacing:.24em;color:var(--ember);font-weight:500;display:inline-block;}
+
+.header{position:fixed;top:0;left:0;width:100%;z-index:120;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(18px,5vw,52px);color:var(--paper);transition:background .45s,padding .45s;}
+.header.scrolled{background:rgba(24,21,19,.94);backdrop-filter:blur(10px);padding:12px clamp(18px,5vw,52px);}
+.brand{display:flex;flex-direction:column;line-height:1;}
+.brand .b1{font-family:var(--fd);font-size:24px;font-weight:600;letter-spacing:.01em;}
+.brand .b2{font-family:var(--fb);font-size:9px;text-transform:uppercase;letter-spacing:.3em;opacity:.75;margin-top:5px;}
+.nav{display:flex;gap:26px;align-items:center;}
+.nav a{text-transform:uppercase;font-size:11px;letter-spacing:.15em;position:relative;padding:4px 0;opacity:.9;}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--ember);transition:width .35s;}
+.nav a:hover::after{width:100%;}
+.header-right{display:flex;align-items:center;gap:16px;}
+.lang{display:flex;gap:7px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;}
+.lang a{opacity:.55;transition:.3s;}.lang a.active,.lang a:hover{opacity:1;color:var(--ember);}.lang span{opacity:.3;}
+.btn{font-family:var(--fb);text-transform:uppercase;font-size:11px;letter-spacing:.14em;background:var(--ember);color:#1a1006;border:none;cursor:pointer;padding:12px 22px;border-radius:3px;transition:background .35s,transform .35s;font-weight:500;}
+.btn:hover{background:var(--ember-2);transform:translateY(-1px);}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:130;}
+.burger span{width:26px;height:2px;background:currentColor;display:block;transition:.35s;}
+.mobile-menu{position:fixed;inset:0;background:var(--bg);color:var(--paper);z-index:115;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;transform:translateY(-100%);transition:transform .55s cubic-bezier(.7,0,.2,1);}
+.mobile-menu.open{transform:translateY(0);}
+.mobile-menu a{font-family:var(--fd);font-size:32px;padding:7px 0;}
+.mobile-menu .mlang{margin-top:24px;display:flex;gap:18px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);}
+
+/* fullbleed hero, bottom-aligned headline */
+.hero{position:relative;height:100svh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden;background:#120f0d;}
+.hero-bg{position:absolute;inset:0;background-color:#1a1411;background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1700&q=80');background-size:cover;background-position:center;will-change:transform;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,15,13,.4) 0%,rgba(18,15,13,.2) 40%,rgba(18,15,13,.86) 100%);}
+.hero-in{position:relative;z-index:3;width:min(1220px,90vw);margin:0 auto;padding-bottom:clamp(50px,8vh,90px);color:#fff;}
+.hero-in .eyebrow{color:#f1b27a;margin-bottom:16px;}
+.hero h1{font-size:clamp(46px,9vw,118px);font-weight:600;text-shadow:0 2px 30px rgba(0,0,0,.4);max-width:14ch;}
+.hero h1 .it{color:#f1b27a;}
+.hero .sub{font-family:var(--fb);font-size:14px;letter-spacing:.04em;margin-top:18px;color:rgba(255,255,255,.84);max-width:46ch;}
+.hero-cta{margin-top:26px;display:flex;gap:13px;flex-wrap:wrap;}
+.cta{display:inline-flex;align-items:center;gap:9px;font-family:var(--fb);text-transform:uppercase;font-size:12px;letter-spacing:.13em;padding:15px 28px;border-radius:3px;cursor:pointer;border:1px solid transparent;transition:.35s;font-weight:500;}
+.cta.fill{background:var(--ember);color:#1a1006;}.cta.fill:hover{background:var(--ember-2);}
+.cta.glass{border-color:rgba(255,255,255,.55);color:#fff;}.cta.glass:hover{background:#fff;color:var(--ink);}
+.cta.ghost{border-color:var(--ink);color:var(--ink);}.cta.ghost:hover{background:var(--ink);color:var(--paper);}
+.cta.wa{background:#1f5e3a;color:#eaf4ec;}.cta.wa:hover{background:#1a4f31;}
+.reveal{opacity:0;transform:translateY(26px);}
+
+/* marquee */
+.mq-strip{background:var(--ember);color:#1a1006;overflow:hidden;white-space:nowrap;}
+.mq{display:inline-flex;animation:mq 26s linear infinite;}
+.mq span{font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:12px 0;}
+.mq .d{padding:0 20px;opacity:.6;}
+@keyframes mq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+.philo{padding:clamp(84px,13vh,150px) 0;text-align:center;}
+.philo .wrap{max-width:720px;}
+.philo .rule{width:54px;height:2px;background:var(--ember);margin:0 auto 28px;}
+.philo p{font-family:var(--fd);font-size:clamp(24px,3.4vw,36px);line-height:1.4;font-weight:500;color:#2a251f;}
+.philo p .it{color:var(--ember-2);}
+.philo .sig{margin-top:28px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);}
+
+.menu{padding:clamp(80px,12vh,140px) 0;background:var(--bg);color:var(--paper);}
+.menu .head{text-align:center;margin-bottom:56px;}
+.menu .head h2{font-size:clamp(38px,6vw,68px);color:#f3ead9;}
+.menu .head .eyebrow{margin-bottom:16px;}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;}
+.dish{padding:22px 0;border-top:1px solid var(--line-d);display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;}
+.dish .num{font-family:var(--fd);font-size:15px;color:var(--ember);min-width:24px;}
+.dish h3{font-family:var(--fd);font-size:23px;color:#f3ead9;margin-bottom:4px;font-weight:600;}
+.dish p{font-size:14px;color:#b3a899;line-height:1.55;}
+.dish .tag{display:inline-block;margin-top:6px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ember);}
+.menu-note{text-align:center;margin-top:48px;font-family:var(--fd);font-style:italic;font-size:19px;color:#ccc0ad;}
+
+.story{padding:clamp(80px,12vh,150px) 0;overflow:hidden;}
+.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,82px);align-items:center;}
+.story-fig{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;background:#1a1411;}
+.story-fig .pimg{position:absolute;inset:-12% 0;width:100%;height:124%;background-color:#1a1411;background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1100&q=80');background-size:cover;background-position:center;will-change:transform;}
+.story-text h2{font-size:clamp(34px,5vw,56px);margin-bottom:18px;color:#2a251f;}
+.story-text h2 .it{color:var(--ember-2);display:block;}
+.story-text p{margin-bottom:15px;color:var(--ink-soft);}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;}
+.chips span{font-size:11px;padding:7px 14px;border:1px solid var(--line);border-radius:4px;color:var(--ink-soft);}
+
+.atmo{padding:clamp(80px,12vh,150px) 0;background:var(--bg-2);color:var(--paper);}
+.atmo .head{text-align:center;max-width:640px;margin:0 auto 52px;}
+.atmo .head h2{font-size:clamp(34px,5.5vw,56px);color:#f3ead9;margin:14px 0;}
+.atmo .head p{color:#bcb09c;}.atmo .head p .it{color:var(--ember);}
+.acards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.acard{padding:34px 28px;border:1px solid var(--line-d);border-radius:4px;}
+.acard .ic{font-family:var(--fd);font-size:34px;color:var(--ember);display:block;margin-bottom:14px;line-height:1;font-weight:600;}
+.acard h3{font-size:22px;color:#f3ead9;margin-bottom:10px;}
+.acard p{font-size:14px;color:#a99e8c;}
+
+.gallery{padding:clamp(80px,12vh,140px) 0;}
+.gallery .head{text-align:center;margin-bottom:46px;}
+.gallery .head h2{font-size:clamp(34px,5vw,56px);margin-top:12px;}
+.masonry{columns:3;column-gap:14px;}
+.masonry figure{break-inside:avoid;margin:0 0 14px;border-radius:4px;overflow:hidden;position:relative;}
+.gt{background-size:cover;background-position:center;transition:transform .8s;}
+.masonry figure:hover .gt{transform:scale(1.04);}
+.gcap{position:absolute;left:0;bottom:0;width:100%;padding:13px;background:linear-gradient(transparent,rgba(18,15,13,.74));color:#f0e6d4;font-family:var(--fd);font-style:italic;font-size:15px;opacity:0;transform:translateY(8px);transition:.4s;}
+.masonry figure:hover .gcap{opacity:1;transform:translateY(0);}
+.m1{aspect-ratio:3/4;background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80');}
+.m2{aspect-ratio:1/1;background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80');}
+.m3{aspect-ratio:4/5;background-image:url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=900&q=80');}
+.m4{aspect-ratio:3/4;background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80');}
+.m5{aspect-ratio:1/1;background-image:url('https://images.unsplash.com/photo-1432139509613-5c4255815697?auto=format&fit=crop&w=900&q=80');}
+.m6{aspect-ratio:4/5;background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80');}
+
+.resv{padding:clamp(88px,13vh,150px) 0;background:var(--bg);color:var(--paper);text-align:center;}
+.resv .eyebrow{margin-bottom:16px;}
+.resv h2{font-size:clamp(36px,6vw,64px);color:#f3ead9;margin-bottom:16px;}
+.resv h2 .it{color:var(--ember);}
+.resv .lead{max-width:560px;margin:0 auto 12px;color:#bcb09c;}
+.resv .hours{font-family:var(--fd);font-style:italic;font-size:20px;color:#ccc0ad;margin-bottom:36px;}
+.r-actions{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;}
+.resv .cta.ghost{border-color:var(--line-d);color:#f3ead9;}.resv .cta.ghost:hover{border-color:var(--ember);color:var(--ember);background:transparent;}
+
+.loc{padding:clamp(80px,12vh,140px) 0;}
+.loc .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.loc h2{font-size:clamp(32px,5vw,52px);margin-bottom:18px;}
+.loc .addr{font-family:var(--fd);font-size:22px;margin:6px 0 18px;line-height:1.4;}
+.loc p{color:var(--ink-soft);margin-bottom:8px;}
+.loc .maplink{display:inline-block;margin-top:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-2);border-bottom:1px solid var(--ember-2);padding-bottom:3px;}
+.loc-map{aspect-ratio:5/4;border-radius:4px;overflow:hidden;position:relative;background:linear-gradient(135deg,#d6cbb6,#c7ba9f);}
+.loc-map::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(122,122,78,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(122,122,78,.16) 1px,transparent 1px);background-size:38px 38px;}
+.loc-map .pin{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.loc-map .pin .dot{width:18px;height:18px;border-radius:50%;background:var(--ember);margin:0 auto 8px;box-shadow:0 0 0 8px rgba(212,105,30,.2);}
+.loc-map .pin span{font-family:var(--fd);font-size:18px;color:#33301f;}
+.loc-map .sea{position:absolute;bottom:0;left:0;width:100%;height:40%;background:linear-gradient(180deg,rgba(80,140,150,.3),rgba(50,110,120,.5));}
+.loc-map .sea-label{position:absolute;bottom:14px;right:18px;font-family:var(--fd);font-style:italic;font-size:15px;color:#1f4a4a;}
+
+.footer{background:var(--bg);color:#b3a899;padding:70px 0 40px;border-top:1px solid var(--line-d);}
+.footer .grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:38px;margin-bottom:44px;}
+.footer h4{font-family:var(--fd);font-size:25px;color:#f3ead9;margin-bottom:10px;font-weight:600;}
+.footer .tag{font-family:var(--fd);font-style:italic;font-size:16px;color:#9c9286;}
+.footer .col-t{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);margin-bottom:14px;}
+.footer a{display:block;font-size:14px;margin-bottom:8px;color:#b3a899;transition:.3s;}.footer a:hover{color:#f3ead9;}
+.footer .bottom{border-top:1px solid var(--line-d);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#7c7468;}
+
+.panel-ov{position:fixed;inset:0;background:rgba(18,15,13,.55);opacity:0;pointer-events:none;transition:opacity .4s;z-index:198;backdrop-filter:blur(2px);}
+.panel-ov.open{opacity:1;pointer-events:all;}
+.panel{position:fixed;top:0;right:0;height:100svh;width:min(430px,100vw);background:var(--paper);z-index:200;transform:translateX(100%);transition:transform .55s cubic-bezier(.7,0,.2,1);padding:48px clamp(26px,4vw,40px);overflow-y:auto;box-shadow:-20px 0 60px rgba(0,0,0,.3);}
+.panel.open{transform:translateX(0);}
+.panel .px{position:absolute;top:22px;right:24px;background:none;border:none;font-size:26px;cursor:pointer;color:var(--ink);}
+.panel h3{font-size:34px;margin:12px 0 6px;}
+.panel .psub{font-family:var(--fd);font-style:italic;font-size:18px;color:var(--ink-soft);margin-bottom:26px;}
+.panel .qrow{display:flex;gap:12px;margin-bottom:24px;}
+.panel .qrow a{flex:1;text-align:center;padding:14px;border-radius:3px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;}
+.qrow .qtel{background:var(--ember);color:#1a1006;}.qrow .qwa{background:#1f5e3a;color:#eaf4ec;}
+.panel .divr{display:flex;align-items:center;gap:14px;margin:6px 0 22px;color:var(--ink-soft);font-size:11px;letter-spacing:.2em;text-transform:uppercase;}
+.panel .divr::before,.panel .divr::after{content:"";flex:1;height:1px;background:var(--line);}
+.panel label{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:16px 0 6px;}
+.panel input,.panel select,.panel textarea{width:100%;padding:12px 14px;border:1px solid var(--line);background:#fff;border-radius:3px;font-family:var(--fb);font-size:15px;color:var(--ink);}
+.panel input:focus,.panel select:focus,.panel textarea:focus{outline:none;border-color:var(--ember);}
+.panel .submit{width:100%;margin-top:24px;background:var(--bg);color:var(--paper);border:none;padding:16px;border-radius:3px;text-transform:uppercase;letter-spacing:.15em;font-size:12px;cursor:pointer;transition:.3s;font-family:var(--fb);}
+.panel .submit:hover{background:var(--ember);color:#1a1006;}
+.panel .pnote{font-size:12px;color:var(--ink-soft);margin-top:14px;text-align:center;}
+
+.mobile-bar{position:fixed;bottom:0;left:0;width:100%;z-index:140;display:none;grid-template-columns:1fr 1fr;}
+.mobile-bar a{padding:15px;text-align:center;color:#fff;text-transform:uppercase;font-size:11px;letter-spacing:.12em;display:flex;align-items:center;justify-content:center;}
+.mobile-bar a.mwa{background:#1f5e3a;}.mobile-bar a.mtel{background:var(--ember);color:#1a1006;}
+
+@media(max-width:900px){
+  .nav,.header .lang{display:none;}.burger{display:flex;}.header-right .btn{display:none;}
+  .menu-grid,.story .grid,.loc .grid,.footer .grid{grid-template-columns:1fr;}
+  .acards{grid-template-columns:1fr;}
+  .masonry{columns:2;}.mobile-bar{display:grid;}.resv{padding-bottom:120px;}.footer{padding-bottom:90px;}
+}
+@media(max-width:560px){.masonry{columns:1;}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.reveal{opacity:1!important;transform:none!important;}}
+</style>
+</head>
+<body>
+<header class="header" id="header">
+  <a href="#top" class="brand"><span class="b1">Goran</span><span class="b2">Bar &amp; Grill · Bibinje</span></a>
+  <nav class="nav"><a href="#menu">Jelovnik</a><a href="#story">Priča</a><a href="#atmo">Ambijent</a><a href="#gallery">Galerija</a><a href="#loc">Lokacija</a></nav>
+  <div class="header-right">
+    <div class="lang"><a href="#" class="active">HR</a><span>·</span><a href="#">EN</a><span>·</span><a href="#">DE</a></div>
+    <button class="btn" data-open-resv>Rezerviraj</button>
+    <button class="burger" id="burger" aria-label="Izbornik"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#menu">Jelovnik</a><a href="#story">Priča</a><a href="#atmo">Ambijent</a><a href="#gallery">Galerija</a><a href="#loc">Lokacija</a>
+  <a href="#resv" style="color:var(--ember)">Rezerviraj</a>
+  <div class="mlang"><a href="#">HR</a><a href="#">EN</a><a href="#">DE</a></div>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-in">
+    <span class="eyebrow">Bibinje · kraj Zadra</span>
+    <h1>Sve s <span class="it">gradela.</span></h1>
+    <p class="sub">Bar &amp; Grill uz more — miješano meso, ražnjići, svježa riba i lignje na žaru. Obilno, domaće i bez kompliciranja.</p>
+    <div class="hero-cta">
+      <button class="cta fill" data-open-resv>Rezervirajte stol</button>
+      <a href="#menu" class="cta glass">Jelovnik</a>
+    </div>
+  </div>
+</section>
+
+<div class="mq-strip" aria-hidden="true">
+  <div class="mq">
+    <span>MIJEŠANO MESO<span class="d">●</span>RAŽNJIĆI<span class="d">●</span>ĆEVAPI<span class="d">●</span>RIBA NA GRADELE<span class="d">●</span>LIGNJE NA ŽARU<span class="d">●</span>OBILNE PORCIJE<span class="d">●</span></span>
+    <span>MIJEŠANO MESO<span class="d">●</span>RAŽNJIĆI<span class="d">●</span>ĆEVAPI<span class="d">●</span>RIBA NA GRADELE<span class="d">●</span>LIGNJE NA ŽARU<span class="d">●</span>OBILNE PORCIJE<span class="d">●</span></span>
+  </div>
+</div>
+
+<section class="philo">
+  <div class="wrap reveal">
+    <div class="rule"></div>
+    <p>Kod nas je formula jednostavna: dobar žar, svjež sastojak i porcija koja se pamti. <span class="it">Sjednete, jedete, vraćate se.</span></p>
+    <p class="sig">— Restoran Goran, Bibinje</p>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Jelovnik</span><h2>S roštilja i s mora</h2></div>
+    <div class="menu-grid">
+      <div class="dish reveal"><span class="num">01</span><div><h3>Miješano meso s gradela</h3><p>Ćevapi, ražnjić, pljeskavica i kobasica — za prave gladne.</p><span class="tag">Hit kuće</span></div></div>
+      <div class="dish reveal"><span class="num">02</span><div><h3>Ražnjići</h3><p>Sočni komadi mesa s gradela, povrće i domaći prilog.</p></div></div>
+      <div class="dish reveal"><span class="num">03</span><div><h3>Biftek s žara</h3><p>Odrezak po želji, s umakom kuće i prilogom.</p><span class="tag">Specijalitet</span></div></div>
+      <div class="dish reveal"><span class="num">04</span><div><h3>Riba na gradele</h3><p>Svježa riba dana s blitvom i maslinovim uljem.</p></div></div>
+      <div class="dish reveal"><span class="num">05</span><div><h3>Lignje na žaru</h3><p>Lignje s roštilja, češnjak, peršin i krumpir.</p></div></div>
+      <div class="dish reveal"><span class="num">06</span><div><h3>Pljeskavica Goran</h3><p>Velika pljeskavica punjena sirom, uz pomfrit.</p></div></div>
+      <div class="dish reveal"><span class="num">07</span><div><h3>Domaća juha</h3><p>Topli početak dana — goveđa ili riblja.</p></div></div>
+      <div class="dish reveal"><span class="num">08</span><div><h3>Sezonska salata</h3><p>Svježe povrće, maslinovo ulje i sol.</p></div></div>
+      <div class="dish reveal"><span class="num">09</span><div><h3>Palačinke</h3><p>Za slatki kraj — s čokoladom, orasima ili džemom.</p><span class="tag">Desert</span></div></div>
+    </div>
+    <p class="menu-note reveal">Žar gori cijeli dan. Pitajte za današnju ribu i preporuku kuće.</p>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap"><div class="grid">
+    <div class="story-fig reveal"><div class="pimg" id="storyP"></div></div>
+    <div class="story-text reveal">
+      <span class="eyebrow">Naša priča</span>
+      <h2>Roštilj uz <span class="it">more u Bibinjama</span></h2>
+      <p>Goran je obiteljski Bar &amp; Grill u Bibinjama, malom mjestu uz more nadomak Zadra. Žar je srce kuće — meso i riba s roštilja, obilne porcije i opuštena, domaća atmosfera.</p>
+      <p>Dolaze susjedi, ribari, obitelji i gosti s plaže. Kod nas se jede dobro, jednostavno i puno.</p>
+      <div class="chips"><span>Roštilj cijeli dan</span><span>Svježa riba</span><span>Obilne porcije</span><span>Uz more</span><span>Za obitelji</span></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="atmo" id="atmo">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Ambijent</span><h2>Dim, žar i dobro društvo</h2><p>Goran se pamti po <span class="it">opuštenosti</span> — po mirisu roštilja, hladu masline i moru tik do stola.</p></div>
+    <div class="acards">
+      <div class="acard reveal"><span class="ic">01</span><h3>Pravi žar</h3><p>Roštilj na drveni ugljen — okus koji plinski grill nikad ne da.</p></div>
+      <div class="acard reveal"><span class="ic">02</span><h3>Terasa u hladu</h3><p>Stolovi pod maslinama i borovima, korak od mora.</p></div>
+      <div class="acard reveal"><span class="ic">03</span><h3>Domaća atmosfera</h3><p>Bez fensi priče — toplo, gostoljubivo i pristupačno.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Galerija</span><h2>S roštilja i sa stola</h2></div>
+    <div class="masonry reveal">
+      <figure><div class="gt m1"></div><figcaption class="gcap">S roštilja</figcaption></figure>
+      <figure><div class="gt m2"></div><figcaption class="gcap">Miješano meso</figcaption></figure>
+      <figure><div class="gt m3"></div><figcaption class="gcap">Žar gori</figcaption></figure>
+      <figure><div class="gt m4"></div><figcaption class="gcap">Riba dana</figcaption></figure>
+      <figure><div class="gt m5"></div><figcaption class="gcap">Domaći stol</figcaption></figure>
+      <figure><div class="gt m6"></div><figcaption class="gcap">Plodovi mora</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="resv" id="resv">
+  <div class="wrap reveal">
+    <span class="eyebrow">Rezervacije</span>
+    <h2>Dolazite <span class="it">gladni</span></h2>
+    <p class="lead">Nazovite ili pišite na WhatsApp — za veće društvo i vikende najbolje je rezervirati stol unaprijed.</p>
+    <p class="hours">Otvoreno sezonski · Govorimo HR · EN · DE</p>
+    <div class="r-actions">
+      <a href="tel:+385989691593" class="cta fill">Nazovite · +385 98 969 1593</a>
+      <a href="https://wa.me/385989691593" class="cta wa" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="cta ghost" data-open-resv>Pošaljite upit</button>
+    </div>
+  </div>
+</section>
+
+<section class="loc" id="loc">
+  <div class="wrap"><div class="grid">
+    <div class="reveal">
+      <span class="eyebrow">Lokacija</span>
+      <h2>U Bibinjama</h2>
+      <p class="addr">Bibinje<br>Zadarska županija, Hrvatska</p>
+      <p>Uz more, samo nekoliko minuta od Zadra. Lako dostupno autom, s parkingom u blizini.</p>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Restoran+Goran+Bibinje" target="_blank" rel="noopener">Otvori u Google Maps →</a>
+    </div>
+    <div class="loc-map reveal" aria-hidden="true">
+      <div class="pin"><div class="dot"></div><span>Goran</span></div>
+      <div class="sea"></div><div class="sea-label">Jadransko more</div>
+    </div>
+  </div></div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="grid">
+      <div><h4>Restoran Goran</h4><p class="tag">Sve s gradela, uz more.</p><p style="font-size:13px;margin-top:14px">Bar &amp; Grill u Bibinjama kraj Zadra · obilne porcije i domaća atmosfera.</p></div>
+      <div><p class="col-t">Kontakt</p><a href="tel:+385989691593">+385 98 969 1593</a><a href="https://wa.me/385989691593" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.google.com/maps/search/?api=1&query=Restoran+Goran+Bibinje" target="_blank" rel="noopener">Bibinje</a></div>
+      <div><p class="col-t">Pratite nas</p><a href="https://www.facebook.com/search/top?q=restoran%20goran%20bibinje" target="_blank" rel="noopener">Facebook</a><p class="tag" style="margin-top:14px;font-size:13px">Jezici: HR · EN · DE</p></div>
+    </div>
+    <div class="bottom"><span>© <span id="yr"></span> Restoran Goran, Bibinje</span><span>Bar &amp; Grill · žar gori cijeli dan.</span></div>
+  </div>
+</footer>
+
+<div class="panel-ov" id="panelOv"></div>
+<aside class="panel" id="panel" aria-label="Rezervacija">
+  <button class="px" data-close-resv aria-label="Zatvori">×</button>
+  <span class="eyebrow">Rezervacija stola</span>
+  <h3>Javite se</h3>
+  <p class="psub">Odgovaramo osobno — bez online sustava.</p>
+  <div class="qrow"><a href="tel:+385989691593" class="qtel">Nazovi</a><a href="https://wa.me/385989691593" class="qwa" target="_blank" rel="noopener">WhatsApp</a></div>
+  <div class="divr">ili pošaljite upit</div>
+  <form id="resvForm">
+    <label for="rn">Ime i prezime</label><input id="rn" type="text" required placeholder="Vaše ime" />
+    <label for="rd">Datum &amp; vrijeme</label><input id="rd" type="text" placeholder="npr. 18.7. u 20h" />
+    <label for="rp">Broj gostiju</label><select id="rp"><option>2 osobe</option><option>3 osobe</option><option>4 osobe</option><option>5–6 osoba</option><option>7+ osoba</option></select>
+    <label for="rm">Poruka</label><textarea id="rm" rows="3" placeholder="Veće društvo, posebne želje…"></textarea>
+    <button type="submit" class="submit">Pošalji upit putem WhatsAppa</button>
+    <p class="pnote">Otvara WhatsApp s vašim upitom — potvrdu šaljemo osobno.</p>
+  </form>
+</aside>
+
+<div class="mobile-bar">
+  <a href="tel:+385989691593" class="mtel">Nazovi</a>
+  <a href="https://wa.me/385989691593" class="mwa" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var header=document.getElementById('header');
+function onS(){header.classList.toggle('scrolled',window.scrollY>60);}onS();window.addEventListener('scroll',onS,{passive:true});
+var burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+burger.addEventListener('click',function(){mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.classList.remove('open');document.body.style.overflow='';});});
+var panel=document.getElementById('panel'),pov=document.getElementById('panelOv');
+function op(){panel.classList.add('open');pov.classList.add('open');document.body.style.overflow='hidden';}
+function cl(){panel.classList.remove('open');pov.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('[data-open-resv]').forEach(function(b){b.addEventListener('click',op);});
+document.querySelectorAll('[data-close-resv]').forEach(function(b){b.addEventListener('click',cl);});
+pov.addEventListener('click',cl);document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});
+document.getElementById('resvForm').addEventListener('submit',function(e){e.preventDefault();
+  var n=document.getElementById('rn').value||'',d=document.getElementById('rd').value||'',p=document.getElementById('rp').value||'',m=document.getElementById('rm').value||'';
+  var t='Pozdrav Goran! Rezervacija stola.%0AIme: '+encodeURIComponent(n)+'%0ATermin: '+encodeURIComponent(d)+'%0AGostiju: '+encodeURIComponent(p)+(m?'%0ANapomena: '+encodeURIComponent(m):'');
+  window.open('https://wa.me/385989691593?text='+t,'_blank');});
+if(window.gsap){gsap.registerPlugin(ScrollTrigger);
+  if(!reduce&&window.Lenis){var lenis=new Lenis({duration:1.2,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},smoothWheel:true});
+    gsap.ticker.add(function(t){lenis.raf(t*1000);});gsap.ticker.lagSmoothing(0);lenis.on('scroll',ScrollTrigger.update);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var el=document.querySelector(id);if(el){e.preventDefault();lenis.scrollTo(el,{offset:-50});}});});}
+  if(!reduce){
+    gsap.fromTo('#heroBg',{scale:1.08},{scale:1,duration:2.6,ease:'power2.out'});
+    gsap.to('#heroBg',{yPercent:14,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});
+    gsap.to('#storyP',{yPercent:-12,ease:'none',scrollTrigger:{trigger:'.story',start:'top bottom',end:'bottom top',scrub:1}});
+    gsap.utils.toArray('.reveal').forEach(function(el){gsap.fromTo(el,{opacity:0,y:26},{opacity:1,y:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%'}});});
+  }
+}
+</script>
+</body>
+</html>
